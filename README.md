@@ -70,7 +70,15 @@ Tina achieves C-level performance and Erlang-level reliability by strictly limit
 *   🚫 **No `async` / `await`.** Colored functions fragment ecosystems. Tina uses a cooperative user-space scheduler. Handlers are standard functions that return `Effect` values.
 *   🚫 **No Mutexes. Shared-Nothing.** Tina runs thread-per-core. Isolates never share memory. All cross-core communication uses lock-free ring buffers (mailboxes).
 *   🚫 **No Hidden Allocations.** All memory is sized and pre-allocated at startup via a static boot spec. If your workload exceeds capacity, Tina sheds load predictably rather than OOM-crashing.
-*   ✅ **100% Deterministic Simulation.** The clock, network, and I/O are abstracted behind the scheduler. Tina supports TigerBeetle-style Deterministic Simulation Testing. *Same seed + same config = same execution, every time.*
+*   ✅ **100% Deterministic Simulation.** The clock, network, and I/O are abstracted behind the scheduler. Tina supports TigerBeetle-style Deterministic Simulation Testing. *Same seed + same config = same execution, every time*.
+
+## Production Deployments
+
+I use tina for private experimental projects but there are a few folks who are experimenting with it, some running in production. 
+
+- https://wlls.dev/ - web server by by Devon Wells for running his website.
+
+> are you running Tina in production? Send a PR so it can be added to this list
 
 ## Architecture at a Glance
 
